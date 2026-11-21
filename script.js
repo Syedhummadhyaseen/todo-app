@@ -42,7 +42,11 @@ addBtn.addEventListener("click", function () {
   renderTasks();
   taskInput.value = "";
 });
-
+taskInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        addBtn.click();
+    }
+});
 taskList.addEventListener("click", function (e) {
   const li = e.target.closest("li");
   if (!li) {
